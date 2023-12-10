@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { classname } from "../index";
+import { isArray } from "../utils";
 
 describe("cx", () => {
   const isLoading = true;
@@ -69,8 +71,26 @@ describe("cx", () => {
           "text-l": true,
         },
         flex: [device === "phone" ? "col" : "row", "justify-between"],
-        hover: isHovered && ["bg-blue", "text-white"],
+        hover: isHovered && ["bg-blue", "text-white", { "text-wrap": true }],
       }),
-    ).toBe("text-roboto text-l col justify-between bg-blue text-white");
+    ).toBe("text-roboto text-l col justify-between bg-blue text-white text-wrap");
+  });
+});
+
+describe("utils", () => {
+  describe("isArray", () => {
+    it("should return false when value is not array", () => {
+      expect(isArray(null)).toBe(false);
+      expect(isArray("array")).toBe(false);
+      expect(isArray({ test: 1 })).toBe(false);
+      expect(isArray(undefined)).toBe(false);
+    });
+
+    it("should return true when value an array", () => {
+      expect(isArray([])).toBe(true);
+      expect(isArray([1])).toBe(true);
+      expect(isArray([{ test: 1 }])).toBe(true);
+      expect(isArray([null])).toBe(true);
+    });
   });
 });

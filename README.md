@@ -83,3 +83,5 @@ function App() {
    */
 }
 ```
+
+### it's need Polyfill Object.entries to support older browsers
