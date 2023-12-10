@@ -1,6 +1,6 @@
 {
   "name": "classes-names",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "A lightweight JavaScript function for conditional joining class names together",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
