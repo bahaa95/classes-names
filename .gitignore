@@ -1,0 +1,6 @@
+node_modules
+dist
+coverage
+.coveralls.yml
+Gemfile
+spec-helper.rb
