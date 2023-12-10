@@ -21,7 +21,7 @@ Install classes-names
 ## Usage/Examples
 
 ```typescript
-import { cx } from "classes-names";
+import { classname as cx } from "classes-names";
 
 const isDisabled = false;
 const isLoading = true;
@@ -46,7 +46,7 @@ console.log(classes); //=> "primary text-l row disabled flex row items-center"
 ### Realtime Example
 
 ```typescript
-import { cx } from "classes-names";
+import { classname as cx } from "classes-names";
 
 function App() {
   const [isActive, setIsActive] = useState(false);
